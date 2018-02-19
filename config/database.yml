@@ -1,0 +1,46 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: actioncable
+  username: postgres
+  password: ....
+  host: localhost
+  encoding: utf8
+  port: 5432
+
+development:
+  <<: *default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: actioncable
+  username: postgres
+  password: ....
+  host: localhost
+  encoding: utf8
+  port: 5432
+
+
+test:
+  <<: *default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: actioncable
+  username: postgres
+  password: ....
+  host: localhost
+  encoding: utf8
+  port: 5432
+
+production:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: ...
+  username: .....
+  password: ....
+  host: localhost
+  encoding: utf8
+  port: 5432
