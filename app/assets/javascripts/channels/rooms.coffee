@@ -23,6 +23,7 @@ jQuery(document).on 'turbolinks:load', ->
         @perform 'send_message', message: message, chat_room_id: chat_room_id
 
     $('#new_message').submit (e) ->
+      console.log(messages.data('chat-room-id'))
       $this = $(this)
       textarea = $this.find('#message_body')
       if $.trim(textarea.val()).length > 1
