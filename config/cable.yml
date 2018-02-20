@@ -1,11 +1,9 @@
 development:
-  adapter: redis
-  url: http://127.0.0.1:3030
+  adapter: async
 
 test:
   adapter: async
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: cable_production
+  url: <%= ENV["REDISCLOUD_URL"] %>
