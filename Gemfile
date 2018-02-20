@@ -6,8 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
-
+gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'pg', '~> 0.20.0'
+gem 'redis', '~> 3.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
