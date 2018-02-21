@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'charts/messages_per_hour'
+  get 'charts/messages_per_user'
 
   resources :chat_rooms, only: [:new, :create, :show, :index]
   #root 'chat_rooms#index'
