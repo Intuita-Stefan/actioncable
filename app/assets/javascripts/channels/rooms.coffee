@@ -1,7 +1,17 @@
 jQuery(document).on 'turbolinks:load', ->
   messages = $('#messages')
+  chart = Chartkick.charts["messages-chart"]
   if $('#messages').length > 0
-    messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
+    messages_to_bottom = ->
+      messages.scrollTop(messages.prop("scrollHeight"))
+      $(document).scrollTop(messages.prop("scrollHeight"))
+
+    update_message_chart =->
+      console.log(chart.getDataSource())
+      #chart.updateData(chart.getDataSource())
+      chart.refreshData()
+      chart.redraw()
+
 
     messages_to_bottom()
 
@@ -17,6 +27,7 @@ jQuery(document).on 'turbolinks:load', ->
 
       received: (data) ->
         messages.append data['message']
+        update_message_chart()
         messages_to_bottom()
 
       send_message: (message, chat_room_id) ->
