@@ -2,6 +2,7 @@
 
 <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
   <%= render @chat_room.messages %>
+  <%= audio_tag 'chaching', class: "audio-play" %>
 </div>
 
 <%= form_for @message, url: '#' do |f| %>
