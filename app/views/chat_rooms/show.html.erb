@@ -2,13 +2,12 @@
 
 <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
   <%= render @chat_room.messages %>
-  <%= audio_tag 'chaching', class: "audio-play" %>
 </div>
 
 <%= form_for @message, url: '#' do |f| %>
     <div class="form-group">
       <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control' %>
+      <%= f.text_field :body, class: 'form-control' %>
       <small class="text-muted">From 2 to 1000 characters</small>
     </div>
 
