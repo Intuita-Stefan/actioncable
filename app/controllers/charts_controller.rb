@@ -8,6 +8,8 @@ class ChartsController < ApplicationController
   end
 
   def messages_per_user_per_hour
-    render json: Message.group_by_hour_of_day(:created_at).group(:user_id).count
+    render json: User.all.map { |u|
+      {name: u.name, data: u.messages.group_by_hour_of_day(:created_at).count}
+    }
   end
 end
